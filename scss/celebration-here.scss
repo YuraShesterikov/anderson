@@ -1,0 +1,270 @@
+$font-path: "../fonts";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+// Импорт шрифта
+@font-face {
+  font-family: "Knitto Font";
+  src: url("#{$font-path}/knitto-font.otf") format("otf"),
+  // формат шрифта, например, otf
+  url("#{$font-path}/knitto-font.ttf") format("ttf"); // формат шрифта, например, woff
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffdb00;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+
+  .design:first-child {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 200px;
+    transform: rotate(180deg);
+    height: 100%;
+
+    @media(max-width:768px) {
+      display: none;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .design:last-child {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+
+    @media(max-width:768px) {
+      display: none;
+    }
+
+    img {
+
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    position: relative;
+    width: calc(100% - 400px);
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1280px;
+    @media(max-width:768px) {
+      width: 100%;
+    }
+  }
+}
+
+.main {
+  padding-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  margin: 30px 0px;
+  width: 100%;
+  &__celebration {
+    color: #3a3e45;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 540px;
+
+    .timer__box {
+      flex-grow: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .timer__inner {
+        display: flex;
+        flex-direction: column;
+        color: #3a3e45;
+        text-align: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        text-transform: uppercase;
+        span {
+          @media(max-width:330px) {
+            font-size: 50px;
+          }
+        }
+      }
+
+      &:first-child {
+        border-right: 3px solid #3a3e45;
+        align-items: flex-start;
+      }
+
+      &:nth-child(2) {
+        border-right: 3px solid #3a3e45;
+        align-items: center;
+      }
+
+      &:last-child {
+        align-items: flex-end;
+      }
+
+      span {
+        color: #3a3e45;
+        font-size: 64px;
+        font-weight: 800;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+.video {
+  margin-top: 50px;
+  height: 562px;
+  width: 100%;
+  // max-width: 970px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #D9D9D9;
+  position: relative;
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__design {
+    position: absolute;
+    width: 100%;
+    height: 23px;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .video-1 {
+    top: 0;
+    left: 50%;
+    right: 0;
+    transform: rotate(180deg) translateX(50%);
+  }
+
+  .video-2 {
+    height: 92%;
+    width: 23px;
+    left: 0;
+  }
+
+  .video-3 {
+    height: 92%;
+    width: 23px;
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  .video-4 {
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: rotate(180deg) translateX(50%);
+  }
+
+  iframe {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .design-back {
+    display: none;
+  }
+}
+
+@media(max-width:1285px) {
+  .video {
+
+    .video-2,
+    .video-3 {
+      width: 15px;
+    }
+  }
+}
+
+@media(max-width:1000px) {
+  .video {
+
+    .video-2,
+    .video-3 {
+      width: 12px;
+    }
+  }
+}
+
+@media(max-width:1000px) {
+  .video {
+
+    .video-2,
+    .video-3 {
+      width: 8px;
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .main {
+    padding-bottom: 30px;
+  }
+  .video {
+
+    .video-2,
+    .video-3 {
+      width: 14px;
+    }
+  }
+}
+@media(max-width:600px) {
+  .video {
+    height: 400px;
+    .video-2,
+    .video-1,
+    .video-4,
+    .video-3 {
+      display: none;
+    }
+  }
+}
